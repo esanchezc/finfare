@@ -4,7 +4,7 @@ from selenium import webdriver
 from config import TestConfig
 
 
-@pytest.fixture()
+@pytest.fixture(scope="module")
 def driver():
     driver = webdriver.Chrome()
     driver.get(TestConfig.BASE_URL)
