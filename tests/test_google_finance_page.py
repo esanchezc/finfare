@@ -26,10 +26,12 @@ def test_compare_stock_symbols(displayed_symbols):
     assert found_symbols, "None of the expected stock symbols were found in the watchlist"
     print(f"\n{len(found_symbols)} out of {len(TestConfig.STOCK_SYMBOLS)} expected stock symbols were found in the watchlist")
 
+@pytest.mark.print_test
 def test_print_test_data_stocks_not_in_interested_stocks(displayed_symbols):
     missing_stocks = set(TestConfig.STOCK_SYMBOLS) - set(displayed_symbols)
     print_stock_list("\nStocks in test data that are not in stocks you might be interested in:", missing_stocks)
 
+@pytest.mark.print_test
 def test_print_interested_stocks_not_in_test_data(displayed_symbols):
     missing_stocks = set(displayed_symbols) - set(TestConfig.STOCK_SYMBOLS)
     print_stock_list("\nStocks you might be interested in that are not in test data:", missing_stocks)
