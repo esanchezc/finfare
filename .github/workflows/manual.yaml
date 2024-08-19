@@ -1,4 +1,4 @@
-name: Manual Pytest Run
+name: Manual Google Finance test run
 
 on:
   workflow_dispatch:
