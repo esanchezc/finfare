@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       run_print_tests:
-        description: 'Run print tests'
+        description: 'Only run print tests'
         required: true
         type: boolean
         default: false
