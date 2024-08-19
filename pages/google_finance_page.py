@@ -1,9 +1,9 @@
-from seleniumpagefactory.Pagefactory import PageFactory
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-from selenium.common.exceptions import TimeoutException
 from selenium import webdriver
+from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.common.by import By
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.ui import WebDriverWait
+from seleniumpagefactory.Pagefactory import PageFactory
 
 
 class GoogleFinancePage(PageFactory):
@@ -14,7 +14,7 @@ class GoogleFinancePage(PageFactory):
         "page_title": ("XPATH", "//a[@id='sdgBod']/span[text()='Finance']"),
         "watchlist_title": ("ID", "smart-watchlist-title"),
         "watchlist_items": (By.CSS_SELECTOR, "#smart-watchlist-title + ul > li"),
-        "watchlist_symbol": (By.CSS_SELECTOR, "div.COaKTb")
+        "watchlist_symbol": (By.CSS_SELECTOR, "div.COaKTb"),
     }
 
     def is_title_visible(self):
@@ -29,7 +29,9 @@ class GoogleFinancePage(PageFactory):
         try:
             WebDriverWait(self.driver, 10).until(EC.visibility_of(self.watchlist_title))
 
-            watchlist_items = self.driver.find_elements(*self.locators["watchlist_items"])
+            watchlist_items = self.driver.find_elements(
+                *self.locators["watchlist_items"]
+            )
 
             stock_symbols = []
             for item in watchlist_items:
