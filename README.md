@@ -1,6 +1,6 @@
 # Google Finance Test Suite
 
-This repository contains an automated test suite for the Google Finance page using Selenium WebDriver with Python. The suite is designed to verify compare displayed stock symbols with a predefined list.
+This repository contains an automated test suite for the Google Finance page using Selenium WebDriver with Python. The suite is designed to compare displayed stock symbols with a predefined list.
 
 ## Project Structure
 
@@ -85,10 +85,3 @@ This workflow runs automatically every day at 2:00 AM UTC.
 This workflow can be triggered manually through the GitHub Actions UI.
 
 This workflow allows you to manually trigger the tests and provides an option to run only the print tests. When triggered, you can choose whether to run all tests or just the print tests marked with the `print_test` marker.
-
-To manually run this workflow:
-1. Go to the "Actions" tab in your GitHub repository
-2. Select "Manual Google Finance test run" from the workflows list
-3. Click "Run workflow"
-4. Choose whether to run only print tests or all tests
-5. Click "Run workflow" to start the execution
